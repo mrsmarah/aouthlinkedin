@@ -16,8 +16,8 @@ module.exports = async (req, res, next) => {
 
         let user = await getUser(userInfo);
         console.log('user', user);
-        req.token=token;
-        req.user=user;
+        req.token = token;
+        req.user = user;
         next();
 
     } catch (e) {
@@ -45,7 +45,7 @@ async function exchangeCodeForToken(code) {
 
 async function getUserInfo(token) {
     try {
-        let user = await superagent.get('https://api.linkedin.com/v2/me').set(`Authorization`, `Bearer ${token}`);
+        let user = await superagent.get(API_REQ).set(`Authorization`, `Bearer ${token}`);
         return user.body;
     }
     catch (err) { console.log(err) }

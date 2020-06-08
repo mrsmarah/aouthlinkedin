@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Auth Test</title>
+  <title>Auth Linkedin</title>
 </head>
 
 <body>
@@ -24,6 +24,7 @@
       return `${key}=`+encodeURIComponent(option[key]);
       
     }).join('&');
+    
     let aoutUrl=`${URL}?${QueryString}`;
     let link=document.getElementById('linked');
     link.setAttribute('href',aoutUrl);
