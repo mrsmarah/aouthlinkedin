@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Auth Test</title>
+</head>
+
+<body>
+  <main>
+
+    <a href="#" id="linked">login with Linkedin</a>
+
+  </main>
+
+  <script>
+    let URL='https://www.linkedin.com/oauth/v2/authorization';
+    let option={
+      response_type:'code',
+      client_id:'78qt5ztox5mqfx',
+      redirect_uri: 'http://localhost:3000/oauth',
+      scope:'r_liteprofile'
+    };
+    let QueryString=Object.keys(option).map((key)=>{
+      return `${key}=`+encodeURIComponent(option[key]);
+      
+    }).join('&');
+    let aoutUrl=`${URL}?${QueryString}`;
+    let link=document.getElementById('linked');
+    link.setAttribute('href',aoutUrl);
+
+  </script>
+
+
+</body>
+
+</html>
