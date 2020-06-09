@@ -18,6 +18,7 @@ app.get('/oauth', linkedinOuth, (req, res) => {
 module.exports = {
   server: app,
   start: (port) => {
+    const PORT = port || process.env.PORT || 4000;
     app.listen(port, () => {
       console.log(`Server Up on ${port}`);
     });

@@ -32,7 +32,7 @@ async function exchangeCodeForToken(code) {
                 code: code,
                 client_id: CLIENT_ID,
                 client_secret: CLIENT_SECRET,
-                redirect_uri: 'https://linkedin401.herokuapp.com/oauth',
+                redirect_uri: 'http://localhost:3000/oauth',// change this to heruko link after deployment
                 grant_type: 'authorization_code',
             });
         console.log('code', code, 'client_id', CLIENT_ID, 'client_secret', CLIENT_SECRET);
@@ -57,10 +57,7 @@ async function getUser(user) {
             firstname: user.localizedFirstName,
             lastName: user.lastName.localized.en_US
         };
-
         return userRecord;
-
-
     }
     catch (err) { console.log(err.message) }
 }
